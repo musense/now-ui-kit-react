@@ -1,6 +1,7 @@
 import React from "react";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
 
 // core components
 
@@ -21,12 +22,24 @@ function NucleoIcons() {
               <Button
                 className="btn-round mr-1"
                 color="info"
+                size="lg"
+              >
+                <Link
+                  className="btn-myLink"
+                  to="/nucleo-icons"
+                >
+                  View Demo Icons
+                </Link>
+              </Button>
+              {/* <Button
+                className="btn-round mr-1"
+                color="info"
                 href="/nucleo-icons"
                 size="lg"
                 target="_blank"
               >
                 View Demo Icons
-              </Button>
+              </Button> */}
               <Button
                 className="btn-round"
                 color="info"
