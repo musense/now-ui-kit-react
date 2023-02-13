@@ -87,14 +87,22 @@
   @include btn-styles($success-color, $success-states-color);
 }
 .btn-info {
-  @include btn-styles($info-color, $info-states-color);
+  &:active,
   &:hover {
-    box-shadow: none;
     background-color: #2CA8FF;
   }
+  @include btn-styles($info-color, $info-states-color);
+  // &:active,
+  // &:focus,
+  // &:hover {
+  //   box-shadow: none;
+  //   background-color: #2CA8FF;
+  // }
 }
 .btn-info > a.btn-myLink {
+  // background-color: transparent;
   @include btn-styles($info-color, $info-states-color);
+  &:active,
   &:hover {
     box-shadow: none;
     background-color: unset;

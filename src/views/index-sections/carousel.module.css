@@ -1,0 +1,22 @@
+.section {
+  padding: 20px 0;
+}
+
+.col {
+  padding: 0;
+}
+.indicator {
+  gap: 40px;
+}
+
+.indicator li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+/* .indicator-item {
+
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+} */

@@ -1,0 +1,55 @@
+.navbar {
+  position: relative;
+  padding: 0;
+  background-color: #9e2a2b;
+  box-shadow: unset;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
+.navbar-logo {
+  height: 98px;
+  width: 182px;
+  background-image: url('./../../assets/img/netLogo.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  left: 0;
+}
+
+.nav-btn-wrapper {
+  flex-wrap: nowrap;
+  gap: 1em;
+  margin-right: 45px;
+}
+
+.nav-btn {
+  color: #9e2a2b;
+  height: 28px;
+  width: 28px;
+}
+
+.twitter {
+  background-image: url('./../../assets/img/twitter_icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.facebook {
+  background-image: url('./../../assets/img/fb_icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.instagram {
+  background-image: url('./../../assets/img/ig_icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}

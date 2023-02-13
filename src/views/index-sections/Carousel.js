@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from './carousel.module.css'
 // reactstrap components
 import {
   Container,
@@ -16,17 +16,37 @@ const items = [
   {
     src: require("assets/img/bg1.jpg"),
     altText: "Nature, United States",
-    caption: "Nature, United States"
+    // caption: "Nature, United States"
+  },
+  {
+    src: require("assets/img/bg2.jpg"),
+    altText: "Somewhere Beyond, United States",
+    // caption: "Somewhere Beyond, United States"
   },
   {
     src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States"
+    altText: "Yellowstone National Park, United States",
+    // caption: "Yellowstone National Park, United States"
   },
   {
     src: require("assets/img/bg4.jpg"),
     altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States"
+    // caption: "Yellowstone National Park, United States"
+  },
+  {
+    src: require("assets/img/bg4.jpg"),
+    altText: "Yellowstone National Park, United States",
+    // caption: "Yellowstone National Park, United States"
+  },
+  {
+    src: require("assets/img/bg4.jpg"),
+    altText: "Yellowstone National Park, United States",
+    // caption: "Yellowstone National Park, United States"
+  },
+  {
+    src: require("assets/img/bg5.jpg"),
+    altText: "Yellowstone National Park, United States",
+    // caption: "Yellowstone National Park, United States"
   }
 ];
 
@@ -55,13 +75,13 @@ function CarouselSection() {
   };
   return (
     <>
-      <div className="section" id="carousel">
+      <div className={`section ${styles.section}`} id="carousel">
         <Container>
           <div className="title">
-            <h4>Carousel</h4>
+            {/* <h2>Banner</h2> */}
           </div>
           <Row className="justify-content-center">
-            <Col lg="8" md="12">
+            <Col xl="12" lg="12" md="12" className={`${styles.col}`}>
               <Carousel
                 activeIndex={activeIndex}
                 next={next}
@@ -71,6 +91,7 @@ function CarouselSection() {
                   items={items}
                   activeIndex={activeIndex}
                   onClickHandler={goToIndex}
+                  className={styles.indicator}
                 />
                 {items.map((item) => {
                   return (

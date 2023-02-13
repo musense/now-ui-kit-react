@@ -1,0 +1,9 @@
+.cut {
+    display: block;
+    height: 51px;
+    width: 100%;
+    background-image: url('./../assets/img/cut.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 60px 0 69px;
+}

@@ -12,6 +12,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 // sections for this page
 import Images from "./index-sections/Images.js";
 import BasicElements from "./index-sections/BasicElements.js";
+import NewTitles from "./index-sections/NewTitles.js";
 import Navbars from "./index-sections/Navbars.js";
 import Tabs from "./index-sections/Tabs.js";
 import Pagination from "./index-sections/Pagination.js";
@@ -24,6 +25,8 @@ import CompleteExamples from "./index-sections/CompleteExamples.js";
 import SignUp from "./index-sections/SignUp.js";
 import Examples from "./index-sections/Examples.js";
 import Download from "./index-sections/Download.js";
+
+import styles from "./index.module.css"
 
 function Index() {
   React.useEffect(() => {
@@ -41,22 +44,27 @@ function Index() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-        <IndexHeader />
+        {/* <IndexHeader /> */}
         <div className="main">
-          <Images />
-          <BasicElements />
-          <Navbars />
-          <Tabs />
-          <Pagination />
-          <Notifications />
-          <Typography />
-          <Javascript />
           <Carousel />
-          <NucleoIcons />
-          <CompleteExamples />
-          <SignUp />
-          <Examples />
-          <Download />
+          <div className={styles.cut}></div>
+          
+
+          {/* <Images /> */}
+          {/* <BasicElements /> */}
+          <NewTitles />
+          
+          {/* <Navbars /> */}
+          {/* <Tabs /> */}
+          {/* <Pagination /> */}
+          {/* <Notifications /> */}
+          {/* <Typography /> */}
+          {/* <Javascript /> */}
+          {/* <NucleoIcons /> */}
+          {/* <CompleteExamples /> */}
+          {/* <SignUp /> */}
+          {/* <Examples /> */}
+          {/* <Download /> */}
         </div>
         <DarkFooter />
       </div>

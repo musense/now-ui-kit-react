@@ -1,0 +1,52 @@
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.title-logo {
+  height: 46px;
+  width: 62px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.title-wrapper.news .title-logo {
+  background-image: url('./../../assets/img/trumpet.png');
+}
+.title-wrapper.hot .title-logo {
+  background-image: url('./../../assets/img/crown.png');
+}
+
+.title-image + div {
+  position: absolute;
+  height: 45px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  margin-left: 72px;
+  justify-content: center;
+}
+.title-wrapper.news .title-image + div {
+  width: 140px;
+}
+.title-wrapper.hot .title-image + div {
+  width: 110px;
+}
+.title-image::after {
+  position: absolute;
+  content: '';
+  background-image: url('./../../assets/img/title.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 45px;
+  width: 433px;
+}
+
+.title-wrapper.hot .title-image::after {
+  transform: scaleX(0.8);
+  transform-origin: left;
+}
+
