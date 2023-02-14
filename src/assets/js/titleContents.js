@@ -3,9 +3,9 @@ import axios from "axios";
 export async function getTitleContents() {
   const response = await axios.get("http://localhost:4200/editor")
     .then(res => res.data)
-  console.group('getTitleContents')
-  console.log(response)
-  console.groupEnd('getTitleContents')
+  // console.group('getTitleContents')
+  // console.log(response)
+  // console.groupEnd('getTitleContents')
 
   return response
 }
@@ -16,7 +16,9 @@ export async function postLikeWithID(id) {
     thumbUp: "LIKE+1"
   })
     .then(res => res.data)
+  // console.group('postLikeWithID')
   // console.log(response)
+  // console.groupEnd('postLikeWithID')
 
   return response
 }

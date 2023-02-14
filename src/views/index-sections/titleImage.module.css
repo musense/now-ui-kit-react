@@ -21,7 +21,7 @@
 .title-image + div {
   position: absolute;
   height: 45px;
-  color: white;
+  color: var(--theme-white);
   display: flex;
   flex-direction: column;
   align-items: center;

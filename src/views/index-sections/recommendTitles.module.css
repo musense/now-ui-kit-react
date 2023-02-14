@@ -1,0 +1,94 @@
+.flex-site {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1540px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px;
+  background-color: unset;
+  margin-bottom: 141px;
+}
+
+.flex-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 28px;
+  height: fit-content;
+  width: 720px;
+  background-color: unset;
+  cursor: pointer;
+}
+
+.flex-box:hover {
+  outline: 1px solid;
+  outline-color: hsl(0, 100%, 90);
+}
+
+.flex-box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 48px;
+}
+
+.title-mainImage {
+  position: relative;
+  width: 268px;
+  height: 217px;
+  background-image: url('./../../assets/img/recommend_image.png');
+  box-shadow: 1px 11px 11px 0px rgb(0 0 0 / 25%);
+}
+
+.title-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-height: 217px;
+  max-width: 418px;
+  overflow: hidden;
+}
+
+.title {
+  height: 38px;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: 9.3px;
+  margin-bottom: 75px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--theme-dark);
+}
+
+.content * {
+  all: unset;
+}
+
+.content {
+  width: 418px;
+  height: 87px;
+  line-height: 2;
+  font-size: 14px;
+  text-align: left;
+  color: var(--theme-dark);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.title-more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 97px;
+  height: 13px;
+  background-image: url('./../../assets/img/more_Botton.png');
+  display: block;
+}

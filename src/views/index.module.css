@@ -1,9 +1,6 @@
-.cut {
-    display: block;
-    height: 51px;
-    width: 100%;
-    background-image: url('./../assets/img/cut.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 60px 0 69px;
+:root {
+  --theme-color: #9e2a2b;
+  --theme-gold: #c6922a;
+  --theme-dark: #343a40;
+  --theme-white: #fff;
 }

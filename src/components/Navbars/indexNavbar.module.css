@@ -1,7 +1,7 @@
 .navbar {
   position: relative;
   padding: 0;
-  background-color: #9e2a2b;
+  background-color: var(--theme-color);
   box-shadow: unset;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .nav-btn {
-  color: #9e2a2b;
+  color: var(--theme-color);
   height: 28px;
   width: 28px;
 }

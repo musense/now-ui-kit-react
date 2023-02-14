@@ -13,7 +13,8 @@ export default function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        navigate('/index')
+        // navigate('/index')
+        navigate('/index#footer')
         // navigate('/content/elit veniam commodo')
     }, []);
 

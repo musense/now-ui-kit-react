@@ -1,29 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-// react plugin used to create switch buttons
-// import Switch from "react-bootstrap-switch";
-// plugin that creates slider
-// import Slider from "nouislider";
-
-// reactstrap components
-import {
-  Button,
-  Label,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 import styles from './newTitle.module.css'
-import { getTitleContents } from "./../../assets/js/titleContents";
 import TitleImage from "./TitleImage";
-
-// core components
 
 
 
@@ -40,18 +19,16 @@ const ranking = new Map([
   [9, '10th'],
 ])
 
-function NewTitles() {
+function NewTitles({ contents }) {
   // console.log(`TITLE_CONTENTS: ${TITLE_CONTENTS}`)
 
-  const [isResolved, setIsResolved] = useState(false);
-  const [_titleContents_, setTitleContents] = useState(null);
   const [newContents, setNewContents] = useState(null);
   const [hotContents, setHotContents] = useState(null);
 
   const navigate = useNavigate()
   const mounted = useRef();
   const sortByAndReturn = (arr = [], key = null) => {
-    console.log(arr);
+    // console.log(arr);
 
     if (key === null) return arr
     if (key && typeof key === 'string' && key.toLowerCase().indexOf('date') !== -1) {
@@ -61,33 +38,19 @@ function NewTitles() {
   }
 
   useEffect(() => {
+    // console.group('NewTitle');
+    // console.log(contents);
+    // console.groupEnd('NewTitle');
     if (!mounted.current) {
       mounted.current = true;
-      console.log(`isResolved: ${isResolved}`)
-      getTitleContents()
-        .then((titleContents) => {
-          setIsResolved(true);
-          setTitleContents(titleContents)
-          setNewContents(sortByAndReturn(titleContents, 'updatedAt'))
-          setHotContents(sortByAndReturn(titleContents, 'thumbUp'))
-        })
-      // if (isResolved) {
-
-      // }
-      // console.group('NEW_CONTENTS')
-      // NEW_CONTENTS.map((content, index) => {
-      //   console.log(content)
-      //   console.log(index)
-      // })
-      // console.groupEnd('NEW_CONTENTS')
-      // console.group('HOT_CONTENTS')
-      // HOT_CONTENTS.map((content, index) => {
-      //   console.log(content)
-      //   console.log(index)
-      // })
-      // console.groupEnd('HOT_CONTENTS')
+      setNewContents(sortByAndReturn(contents, 'updatedAt'))
+      setHotContents(sortByAndReturn(contents, 'thumbUp'))
+      
+      
+    } else {
+      
     }
-  }, [mounted, isResolved]);
+  }, [mounted]);
 
   function goToContent(content) {
     if (content === null) return
@@ -104,8 +67,6 @@ function NewTitles() {
               {
                 newContents.map((content, index) => {
                   if (index >= 4) return
-
-
                   return (
                     <div
                       className={styles['title-container']}

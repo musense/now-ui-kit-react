@@ -34,17 +34,17 @@ const items = [
     // caption: "Yellowstone National Park, United States"
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    // caption: "Yellowstone National Park, United States"
-  },
-  {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    // caption: "Yellowstone National Park, United States"
-  },
-  {
     src: require("assets/img/bg5.jpg"),
+    altText: "Yellowstone National Park, United States",
+    // caption: "Yellowstone National Park, United States"
+  },
+  {
+    src: require("assets/img/bg6.jpg"),
+    altText: "Yellowstone National Park, United States",
+    // caption: "Yellowstone National Park, United States"
+  },
+  {
+    src: require("assets/img/bg7.jpg"),
     altText: "Yellowstone National Park, United States",
     // caption: "Yellowstone National Park, United States"
   }

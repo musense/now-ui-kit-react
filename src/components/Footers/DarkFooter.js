@@ -1,59 +1,84 @@
 /*eslint-disable*/
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import { Container } from "reactstrap";
+import styles from "./darkFooter.module.css";
 
-function DarkFooter() {
+
+function DarkFooter({ tags }) {
+
+
+  const mounted = useRef();
+  const [firstRowTags, setFirstRowTags] = useState(null);
+  const [secondRowTags, setSecondRowTags] = useState(null);
+  const [thirdRowTags, setThirdRowTags] = useState(null);
+
+
+  useEffect(() => {
+
+    setFirstRowTags(tags ? tags.slice(0, 4) : null)
+    setSecondRowTags(tags ? tags.slice(4, 7) : null)
+    setThirdRowTags(tags ? tags.slice(7, 11) : null)
+
+    console.group('DarkFooter');
+    console.log(tags);
+    console.log(firstRowTags);
+    console.log(secondRowTags);
+    console.log(thirdRowTags);
+    console.groupEnd('DarkFooter');
+
+  }, [tags]);
+
   return (
-    <footer className="footer" data-background-color="black">
-      <Container>
-        <nav>
-          <ul>
-            <li>
-              <a
-                href="https://www.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://blog.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                Blog
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="copyright" id="copyright">
-          © {new Date().getFullYear()}, Designed by{" "}
-          <a
-            href="https://www.invisionapp.com?ref=nukr-dark-footer"
-            target="_blank"
-          >
-            Invision
-          </a>
-          . Coded by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=nukr-dark-footer"
-            target="_blank"
-          >
-            Creative Tim
-          </a>
-          .
-        </div>
-      </Container>
+    <footer id="footer" className={`footer ${styles['custom-footer']}`} >
+      {firstRowTags || secondRowTags || thirdRowTags
+        ? (
+          <nav className={styles['custom-nav']}>
+            <ul className={styles['custom-ul']}>
+              {firstRowTags.map((tag, index) => (
+                <li className={styles['custom-li']} key={index}>
+                  <Link
+                    key={index}
+                    to={`/index/${tag._id}`}
+                    target="_blank"
+                  >
+                    # {tag.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className={styles['custom-ul']}>
+              {secondRowTags.map((tag, index) => (
+                <li className={styles['custom-li']} key={index}>
+                  <Link
+                    key={index}
+                    to={`/index/${tag._id}`}
+                    target="_blank"
+                  >
+                    # {tag.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className={styles['custom-ul']}>
+              {thirdRowTags.map((tag, index) => (
+                <li className={styles['custom-li']} key={index}>
+                  <Link
+                    key={index}
+                    to={`/index/${tag._id}`}
+                    target="_blank"
+                  >
+                    # {tag.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )
+        : null
+      }
     </footer>
   );
 }
