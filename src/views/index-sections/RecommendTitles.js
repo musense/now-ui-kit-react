@@ -46,7 +46,7 @@ function RecommendTitles({contents}) {
                             if (index >= 10) return
                             return (
                                 <div
-                                    className={`${styles['title-container']} ${styles['flex-box']}`}
+                                    className={`${styles['flex-box']}`}
                                     key={index + 'divConRec'}
                                     onClick={() => goToContent(recommend)}
                                 >

@@ -82,10 +82,10 @@
 
 .title {
   height: 38px;
-  font-size: 38px;
+  font-size: var(--theme-font-lg);
   line-height: 1;
   letter-spacing: 9.3px;
-  margin-bottom: 68px;
+  margin-bottom: 25px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -94,11 +94,10 @@
 .ranking {
   display: block;
   margin-bottom: 10px;
-  font-size: 25px;
   color: var(--theme-gold);
 }
 .hot-titles * .title {
-  font-size: 25px;
+  font-size: var(--theme-font-sm);
   color: var(--theme-gold);
   height: 59px;
   margin-bottom: 16px;
@@ -109,22 +108,24 @@
 
 .content {
   width: 481px;
-  height: 87px;
+  height: 133px;
   line-height: 2;
-  font-size: 14px;
+  font-size: var(--theme-font-3s);
   text-align: left;
   color: var(--theme-dark);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  /* background-color: beige; */
 }
+
 .hot-titles * .content {
-  line-height: 1.4;
-}
-.hot-titles * .content {
+  font-size: var(--theme-font-4s);
+  -webkit-line-clamp: 3;
+  line-height: 1.8;
   max-width: 366px;
-  height: 60px;
+  height: 70px;
 }
 
 .title-more {

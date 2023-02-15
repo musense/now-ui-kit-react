@@ -3,4 +3,13 @@
   --theme-gold: #c6922a;
   --theme-dark: #343a40;
   --theme-white: #fff;
+
+  --theme-font-3l: 58px;
+  --theme-font-2l: 42px;
+  --theme-font-lg: 38px;
+  --theme-font-md: 36.5px;
+  --theme-font-sm: 25px;
+  --theme-font-2s: 21px;
+  --theme-font-3s: 17.5px;
+  --theme-font-4s: 13.5px;
 }
