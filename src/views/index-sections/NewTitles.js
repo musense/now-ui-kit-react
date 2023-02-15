@@ -45,10 +45,10 @@ function NewTitles({ contents }) {
       mounted.current = true;
       setNewContents(sortByAndReturn(contents, 'updatedAt'))
       setHotContents(sortByAndReturn(contents, 'thumbUp'))
-      
-      
+
+
     } else {
-      
+
     }
   }, [mounted]);
 
@@ -62,7 +62,7 @@ function NewTitles({ contents }) {
         <div className={`${styles['section-basic']}`}>
 
           <div className={`${styles['news-titles']} ${styles['content-container']}`}>
-            <TitleImage logo="news" title={'ニュース'} />
+            <TitleImage type="news" title={'ニュース'} />
             <div className={`${styles['content-section']}`}>
               {
                 newContents.map((content, index) => {
@@ -94,7 +94,7 @@ function NewTitles({ contents }) {
           </div>
 
           <div className={`${styles['hot-titles']} ${styles['content-container']}`}>
-            <TitleImage logo="hot" title={'ホット'} />
+            <TitleImage type="hot" title={'ホット'} />
             <div className={`${styles['content-section']}`}>
               {
                 newContents.map((content, index) => {

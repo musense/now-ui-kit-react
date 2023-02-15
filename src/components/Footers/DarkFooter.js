@@ -22,12 +22,12 @@ function DarkFooter({ tags }) {
     setSecondRowTags(tags ? tags.slice(4, 7) : null)
     setThirdRowTags(tags ? tags.slice(7, 11) : null)
 
-    console.group('DarkFooter');
-    console.log(tags);
-    console.log(firstRowTags);
-    console.log(secondRowTags);
-    console.log(thirdRowTags);
-    console.groupEnd('DarkFooter');
+    // console.group('DarkFooter');
+    // console.log(tags);
+    // console.log(firstRowTags);
+    // console.log(secondRowTags);
+    // console.log(thirdRowTags);
+    // console.groupEnd('DarkFooter');
 
   }, [tags]);
 
@@ -39,39 +39,45 @@ function DarkFooter({ tags }) {
             <ul className={styles['custom-ul']}>
               {firstRowTags.map((tag, index) => (
                 <li className={styles['custom-li']} key={index}>
-                  <Link
+                  {/* <Link
                     key={index}
                     to={`/index/${tag._id}`}
                     target="_blank"
-                  >
+                  > */}
+                  <div>
                     # {tag.name}
-                  </Link>
+                  </div>
+                  {/* </Link> */}
                 </li>
               ))}
             </ul>
             <ul className={styles['custom-ul']}>
               {secondRowTags.map((tag, index) => (
                 <li className={styles['custom-li']} key={index}>
-                  <Link
+                  {/* <Link
                     key={index}
                     to={`/index/${tag._id}`}
                     target="_blank"
-                  >
+                  > */}
+                  <div>
                     # {tag.name}
-                  </Link>
+                  </div>
+                  {/* </Link> */}
                 </li>
               ))}
             </ul>
             <ul className={styles['custom-ul']}>
               {thirdRowTags.map((tag, index) => (
                 <li className={styles['custom-li']} key={index}>
-                  <Link
+                  {/* <Link
                     key={index}
                     to={`/index/${tag._id}`}
                     target="_blank"
-                  >
+                  > */}
+                  <div>
                     # {tag.name}
-                  </Link>
+                  </div>
+                  {/* </Link> */}
                 </li>
               ))}
             </ul>

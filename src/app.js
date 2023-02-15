@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 // pages for this kit
 import Index from "views/Index.js";
-import NucleoIcons from "views/NucleoIcons.js";
-import LoginPage from "views/examples/LoginPage.js";
-import LandingPage from "views/examples/LandingPage.js";
-import ProfilePage from "views/examples/ProfilePage.js";
+import IndexView from "views/IndexView";
 import ContentPage from "views/index-sections/ContentPage";
 
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
@@ -13,23 +10,17 @@ export default function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // navigate('/index')
-        navigate('/index#footer')
-        // navigate('/content/elit veniam commodo')
+        navigate('/')
+        // navigate('/content/63e31e0c1ab9109e2432270f')
     }, []);
 
     return (
         <>
             <Routes>
-                <Route exact path="/index" element={(<Index />)} />
-                <Route path="/nucleo-icons" element={(<NucleoIcons />)} />
-                <Route path="/landing-page" element={(<LandingPage />)} />
-                <Route path="/profile-page" element={(<ProfilePage />)} />
-                <Route path="/login-page" element={(<LoginPage />)} />
-                <Route path="/content/:id" element={(<ContentPage />)} />
-                <Route path="*" element={<Navigate to="/index" replace />} />
-                {/* <Redirect to="/index" />
-                <Redirect from="/" to="/index" /> */}
+                <Route exact path="/" element={<Index />}>
+                    <Route index element={<IndexView />} />
+                    <Route path="content/:id" element={(<ContentPage />)} />
+                </Route>
             </Routes>
         </>
     )

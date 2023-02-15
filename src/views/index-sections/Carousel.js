@@ -77,9 +77,6 @@ function CarouselSection() {
     <>
       <div className={`section ${styles.section}`} id="carousel">
         <Container>
-          <div className="title">
-            {/* <h2>Banner</h2> */}
-          </div>
           <Row className="justify-content-center">
             <Col xl="12" lg="12" md="12" className={`${styles.col}`}>
               <Carousel

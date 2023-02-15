@@ -22,9 +22,12 @@
   cursor: pointer;
 }
 
-.flex-box:hover {
+/* .flex-box:hover {
   outline: 1px solid;
   outline-color: hsl(0, 100%, 90);
+} */
+.flex-box:hover * .title-more {
+  background-image: url('./../../assets/img/more_Botton_h.png');
 }
 
 .flex-box span {

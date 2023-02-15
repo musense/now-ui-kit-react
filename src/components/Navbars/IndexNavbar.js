@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // reactstrap components
 import {
   Button,
@@ -23,6 +23,7 @@ import styles from './indexNavbar.module.css'
 
 function IndexNavbar() {
   // const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
+  const navigate = useNavigate();
   const [navbarColor, setNavbarColor] = React.useState("");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -57,7 +58,7 @@ function IndexNavbar() {
       ) : null}
       <Navbar className={`fixed-top ${navbarColor} ${styles.navbar}`} expand="lg">
         <Container className={styles.container}>
-          <div className={styles['navbar-logo']}></div>
+          <div onClick={() => navigate('/')} className={styles['navbar-logo']}></div>
           {/* <div className="navbar-translate">
             <NavbarBrand
               href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
