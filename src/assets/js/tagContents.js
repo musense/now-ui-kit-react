@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const apiUrl = `${process.env.REACT_APP_SERVER_URL}`
+
 export async function getTagsContents() {
-    const response = await axios.get("http://localhost:4200/tags")
+    const response = await axios.get(`${apiUrl}/tags`)
         .then(res => res.data)
 
     // console.group('getTagsContents')

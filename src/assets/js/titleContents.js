@@ -1,26 +1,28 @@
 import axios from "axios";
 
-export async function getTitleContents() {
-  const response = await axios.get("http://localhost:4200/editor")
-    .then(res => res.data)
-  // console.group('getTitleContents')
-  // console.log(response)
-  // console.groupEnd('getTitleContents')
+const apiUrl = `${process.env.REACT_APP_SERVER_URL}`
 
+export async function getTitleContents() {
+  const response = await axios.get(`${apiUrl}/editor`)
+    .then(res => res.data)
+  console.log("🚀 ~ file: titleContents.js:6 ~ getTitleContents ~ response", response)
   return response
 }
-getTitleContents()
+
+export async function getTitleContentsByTag(tag) {
+  const response = await axios.get(`${apiUrl}/editor/tag/${tag}`)
+    .then(res => res.data)
+  console.log("🚀 ~ file: titleContents.js:13 ~ getTitleContentsByTag ~ response", response)
+  return response
+}
 
 export async function postLikeWithID(id) {
-  const response = await axios.post(`http://localhost:4200/editor/like/${id}`, {
+  const response = await axios.post(`${apiUrl}/editor/like/${id}`, {
     thumbUp: "LIKE+1"
   })
     .then(res => res.data)
-  // console.group('postLikeWithID')
-  // console.log(response)
-  // console.groupEnd('postLikeWithID')
+  console.log("🚀 ~ file: titleContents.js:22 ~ postLikeWithID ~ response", response)
 
   return response
 }
 
-// export const TITLE_CONTENTS = getTitleContents();
