@@ -6,16 +6,20 @@ import styles from "./index.module.css"
 import { getTitleContents } from "./../assets/js/titleContents";
 import { getTagsContents } from "./../assets/js/tagContents";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import DarkFooter from "components/Footers/DarkFooter";
 
 
 function Index() {
 
   const mounted = useRef();
-
+  const location = useLocation()
+  console.log("🚀 ~ file: Index.js:17 ~ Index ~ location", location)
   const [_titleContents_, setTitleContents] = useState(null);
   const [_tagContents_, setTagContents] = useState(null);
+
   useEffect(() => {
+
     if (!mounted.current) {
       mounted.current = true;
       getTitleContents()
@@ -26,7 +30,6 @@ function Index() {
       getTagsContents()
         .then(tags => tags.filter(tag => tag.showOnPage === 'true'))
         .then(tags => {
-          // console.log(tags)
           setTagContents(tags)
         })
 
@@ -38,7 +41,13 @@ function Index() {
       <IndexNavbar />
 
       <Outlet context={{ contents: _titleContents_, tags: _tagContents_ }} />
-      
+
+      {
+        location.pathname === "/"
+          ? <DarkFooter tags={_tagContents_} />
+          : <DarkFooter tags={[]} />
+      }
+
     </>
   );
 }

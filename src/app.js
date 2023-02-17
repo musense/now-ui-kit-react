@@ -5,6 +5,7 @@ import IndexView from "views/IndexView";
 import ContentPage from "views/index-sections/ContentPage";
 
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import TagContentsPage from "views/index-sections/TagContentsPage";
 
 export default function App() {
     const navigate = useNavigate()
@@ -20,6 +21,7 @@ export default function App() {
                 <Route exact path="/" element={<Index />}>
                     <Route index element={<IndexView />} />
                     <Route path="content/:id" element={(<ContentPage />)} />
+                    <Route path="content/tag/:tag" element={(<TagContentsPage />)} />
                 </Route>
             </Routes>
         </>

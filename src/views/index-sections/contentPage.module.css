@@ -134,6 +134,11 @@
   font-size: var(--theme-font-2s);
   gap: 26px;
   margin-bottom: 65px;
+  cursor: pointer;
+}
+
+.content-tags:hover {
+  text-decoration: underline;
 }
 
 .learn-more {

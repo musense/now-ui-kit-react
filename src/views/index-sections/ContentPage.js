@@ -48,6 +48,11 @@ function ContentPage() {
     navigate(`/content/${content._id}`);
   }
 
+  function goToContentsByTag(tag) {
+
+    navigate(`/content/tag/${tag}`)
+  }
+
   return (
     <>
       <div className={`section ${styles.section}`}>
@@ -63,7 +68,7 @@ function ContentPage() {
         <div className={styles['content-page']}>
           {_theContent_ ? <ContentPageLeft content={_theContent_} /> : null}
           <div className={styles['right-content']}>
-            <div className={styles['hot-content']}>
+            {/* <div className={styles['hot-content']}>
               <TitleImage
                 type='hot'
                 showLogo={false}
@@ -82,7 +87,7 @@ function ContentPage() {
                   />
                 ) : null}
               </div>
-            </div>
+            </div> */}
             <div className={styles['trend-tags']}>
               <TitleImage
                 type='trend'
@@ -90,7 +95,7 @@ function ContentPage() {
                 title={'トレンド'}
               />
               <div className={styles['trend-tags-flex-site']}>
-                {tags ? <ContentPageTags tags={tags} /> : null}
+                {tags ? <ContentPageTags tags={tags} goToContentsByTag={goToContentsByTag} /> : null}
               </div>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import DarkFooter from "components/Footers/DarkFooter";
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 import Carousel from "./index-sections/Carousel";
@@ -29,7 +28,6 @@ function IndexView() {
                     ? <RecommendTitles contents={contents} />
                     : null
             }
-            <DarkFooter tags={tags} />
         </>
     );
 }

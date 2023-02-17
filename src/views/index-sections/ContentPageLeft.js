@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./contentPage.module.css";
 
 const dateOption = {
@@ -18,7 +19,15 @@ const item = {
   altText: 'Content Image',
 };
 
-function ContentPageLeft({content}) {
+function ContentPageLeft({ content, goToContentsByTag }) {
+
+  const navigate = useNavigate();
+
+  // function goToContents(tag) {
+    
+  //   navigate(`/content/tag/${tag}`)
+  // }
+
 
   return (<div className={styles['left-content']}>
     <div className={styles['main-content']}>
@@ -69,7 +78,7 @@ function ContentPageLeft({content}) {
     </div>
     <div className={styles['content-tags']}>
       {content.tags.map((tag, index) => {
-        return <span key={index}>#&nbsp;{tag}</span>;
+        return <span onClick={() => goToContentsByTag(tag)} key={index}>#&nbsp;{tag}</span>;
       })}
     </div>
     <div className={styles['content-btn']}>
