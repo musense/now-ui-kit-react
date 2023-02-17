@@ -46,7 +46,6 @@
 		"../scss/now-ui-kit/_responsive.scss",
 		"../scss/react/react-differences.scss",
 		"../scss/react/plugins/_plugin-nouislider.scss",
-		"../scss/react/plugins/_plugin-react-datetime.scss",
 		"../scss/react/now-ui-kit/_misc.scss",
 		"../scss/react/now-ui-kit/_typography.scss",
 		"../scss/react/now-ui-kit/_dropdowns.scss",
