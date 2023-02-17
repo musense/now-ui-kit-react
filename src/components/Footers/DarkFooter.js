@@ -1,9 +1,7 @@
 /*eslint-disable*/
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 
 // reactstrap components
-import { Container } from "reactstrap";
 import styles from "./darkFooter.module.css";
 
 
@@ -21,13 +19,6 @@ function DarkFooter({ tags }) {
     setFirstRowTags(tags ? tags.slice(0, 4) : null)
     setSecondRowTags(tags ? tags.slice(4, 7) : null)
     setThirdRowTags(tags ? tags.slice(7, 11) : null)
-
-    // console.group('DarkFooter');
-    // console.log(tags);
-    // console.log(firstRowTags);
-    // console.log(secondRowTags);
-    // console.log(thirdRowTags);
-    // console.groupEnd('DarkFooter');
 
   }, [tags]);
 
