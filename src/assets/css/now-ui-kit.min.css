@@ -6690,9 +6690,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   transform: translate(0, -50%);
   top: 50%;
   right: 120%;
-} /*!
-* https://github.com/YouCanBookMe/react-datetime
-*/
+} 
 .rdt {
   position: relative;
 }

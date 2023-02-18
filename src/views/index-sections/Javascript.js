@@ -1,6 +1,6 @@
 import React from "react";
 // react plugins that creates an input with a date picker
-import Datetime from "react-datetime";
+// import Datetime from "react-datetime";
 // reactstrap components
 import {
   Button,

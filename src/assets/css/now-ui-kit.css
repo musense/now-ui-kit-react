@@ -7441,9 +7441,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   right: 120%;
 }
 
-/*!
-* https://github.com/YouCanBookMe/react-datetime
-*/
+
 .rdt {
   position: relative;
 }
