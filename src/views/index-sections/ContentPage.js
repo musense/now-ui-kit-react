@@ -23,29 +23,35 @@ function ContentPage() {
   const { contents, tags } = useOutletContext();
   const [_titleContents_, setTitleContents] = useState(null);
   const [_theContent_, setTheContent] = useState(null);
+  const [prevID, setPrevID] = useState(null);
+  const [nextID, setNextID] = useState(null);
 
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const findOneById = (arr = [], id = null) => {
+  const findOneByIdAndReturnPrevNextID = (arr = [], id = null) => {
     if (id === null || typeof id !== 'string') return null;
-    return [...arr].find((a) => a._id === id);
+    const theIndex = arr.findIndex((item) => item._id === id);
+    const theContent = arr[theIndex];
+    const prevID = theIndex === 0 ? null : arr[theIndex - 1]._id;
+    const nextID = theIndex === arr.length - 1 ? null : arr[theIndex + 1]._id;
+    setTitleContents(arr);
+    setTheContent(theContent);
+    setPrevID(prevID)
+    setNextID(nextID)
   };
 
   useEffect(() => {
     if (contents !== null) {
-      const theContent = findOneById(contents, id);
-      console.log(contents);
-      setTitleContents(contents);
-      setTheContent(theContent);
+      findOneByIdAndReturnPrevNextID(contents, id);
     } else {
       navigate('/');
     }
   }, [id]);
 
-  function goToContent(content) {
-    if (content === null) return;
-    navigate(`/content/${content._id}`);
+  function goToContent(id) {
+    if (id === null) return;
+    navigate(`/content/${id}`);
   }
 
   return (
@@ -61,9 +67,14 @@ function ContentPage() {
         </Container>
         <IndexDecorationImage imageType={'cut'} />
         <div className={styles['content-page']}>
-          {_theContent_ ? <ContentPageLeft content={_theContent_} /> : null}
+          {_theContent_ ? <ContentPageLeft
+            content={_theContent_}
+            goToContent={goToContent}
+            prevID={prevID}
+            nextID={nextID}
+          /> : null}
           <div className={styles['right-content']}>
-            <div className={styles['hot-content']}>
+            {/* <div className={styles['hot-content']}>
               <TitleImage
                 type='hot'
                 showLogo={false}
@@ -82,7 +93,7 @@ function ContentPage() {
                   />
                 ) : null}
               </div>
-            </div>
+            </div> */}
             <div className={styles['trend-tags']}>
               <TitleImage
                 type='trend'

@@ -18,7 +18,8 @@ const item = {
   altText: 'Content Image',
 };
 
-function ContentPageLeft({content}) {
+function ContentPageLeft({content, goToContent, prevID, nextID}) {
+
 
   return (<div className={styles['left-content']}>
     <div className={styles['main-content']}>
@@ -73,8 +74,8 @@ function ContentPageLeft({content}) {
       })}
     </div>
     <div className={styles['content-btn']}>
-      <div className={`${styles.btn} ${styles['prev-btn']}`}></div>
-      <div className={`${styles.btn} ${styles['next-btn']}`}></div>
+      <div onClick={() => goToContent(prevID)} className={`${styles.btn} ${styles['prev-btn']}`}></div>
+      <div onClick={() => goToContent(nextID)} className={`${styles.btn} ${styles['next-btn']}`}></div>
     </div>
   </div>);
 }

@@ -8,7 +8,7 @@ function ContentPageConnect({ contents, goToContent }) {
         return (
             <div
                 key={index}
-                onClick={() => goToContent(content)}
+                onClick={() => goToContent(content._id)}
                 className={styles['connect-flex-box']}
             >
                 <div className={styles['connect-image']}>

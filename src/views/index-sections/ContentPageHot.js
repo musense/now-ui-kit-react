@@ -10,7 +10,7 @@ function ContentPageHot({ contents, goToContent }) {
             <div
                 className={styles['title-container']}
                 key={index + 'divConHot'}
-                onClick={() => goToContent(content)}
+                onClick={() => goToContent(content._id)}
             >
                 <div className={styles['title-mainImage']} />
 
