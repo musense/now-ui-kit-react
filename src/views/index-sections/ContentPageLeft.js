@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./contentPage.module.css";
+import Tag from "./Tag";
 
 const dateOption = {
   year: 'numeric',
@@ -24,7 +25,7 @@ function ContentPageLeft({ content, goToContentsByTag }) {
   const navigate = useNavigate();
 
   // function goToContents(tag) {
-    
+
   //   navigate(`/content/tag/${tag}`)
   // }
 
@@ -77,9 +78,9 @@ function ContentPageLeft({ content, goToContentsByTag }) {
       </div>
     </div>
     <div className={styles['content-tags']}>
-      {content.tags.map((tag, index) => {
-        return <span onClick={() => goToContentsByTag(tag)} key={index}>#&nbsp;{tag}</span>;
-      })}
+      {content.tags.map((tagName, index) =>
+        <Tag key={index} tagName={tagName} />
+      )}
     </div>
     <div className={styles['content-btn']}>
       <div className={`${styles.btn} ${styles['prev-btn']}`}></div>
