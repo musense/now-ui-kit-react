@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import styles from "./contentPage.module.css";
 import Tag from "./Tag";
 
@@ -20,15 +19,7 @@ const item = {
   altText: 'Content Image',
 };
 
-function ContentPageLeft({ content, goToContentsByTag }) {
-
-  const navigate = useNavigate();
-
-  // function goToContents(tag) {
-
-  //   navigate(`/content/tag/${tag}`)
-  // }
-
+function ContentPageLeft({ content }) {
 
   return (<div className={styles['left-content']}>
     <div className={styles['main-content']}>

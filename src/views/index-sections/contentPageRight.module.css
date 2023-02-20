@@ -1,0 +1,19 @@
+.trend-tags {
+  position: relative;
+}
+
+.trend-tags-flex-site {
+  margin: 45px 0 0 31px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 45px;
+}
+
+.trend-tags-flex-tags {
+  white-space: nowrap;
+  line-height: 1;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--theme-color);
+}

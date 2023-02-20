@@ -1,3 +1,6 @@
+.content-section{
+  
+}
 .flex-site {
   position: relative;
   margin: 0 auto;
@@ -7,7 +10,8 @@
   flex-wrap: wrap;
   gap: 100px;
   background-color: unset;
-  margin-bottom: 141px;
+  /* margin-bottom: 141px; */
+  margin-bottom: 0;
 }
 
 .flex-box {
@@ -43,9 +47,11 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  max-height: 217px;
+  height: 230px;
   max-width: 418px;
   overflow: hidden;
+  justify-content: flex-start;
+  /* background-color: gray; */
 }
 
 .title {
@@ -53,7 +59,7 @@
   font-size: var(--theme-font-lg);
   line-height: 1;
   letter-spacing: 9.3px;
-  margin-bottom: 48px;
+  margin-bottom: 74px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -66,8 +72,8 @@
 
 .content {
   width: 418px;
-  height: 109px;
-  line-height: 2;
+  height: 88px;
+  line-height: 1.6;
   font-size: var(---theme-font-3s);
   text-align: left;
   color: var(--theme-dark);

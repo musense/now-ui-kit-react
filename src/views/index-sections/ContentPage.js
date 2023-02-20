@@ -6,13 +6,11 @@ import { Container, Row } from 'reactstrap';
 
 import styles from './contentPage.module.css';
 import IndexDecorationImage from './IndexDecorationImage';
-import TitleImage from './TitleImage';
 
 import { useOutletContext } from 'react-router-dom';
 import ContentPageLeft from './ContentPageLeft';
-import ContentPageHot from './ContentPageHot';
-import ContentPageTags from './ContentPageTags';
 import ContentPageConnect from './ContentPageConnect';
+import ContentPageRight from './ContentPageRight';
 
 const item0 = {
   src: require('assets/img/bg1.jpg'),
@@ -43,15 +41,7 @@ function ContentPage() {
     }
   }, [id]);
 
-  function goToContent(content) {
-    if (content === null) return;
-    navigate(`/content/${content._id}`);
-  }
 
-  function goToContentsByTag(tag) {
-
-    navigate(`/content/tag/${tag}`)
-  }
 
   return (
     <>
@@ -67,45 +57,14 @@ function ContentPage() {
         <IndexDecorationImage imageType={'cut'} />
         <div className={styles['content-page']}>
           {_theContent_ ? <ContentPageLeft content={_theContent_} /> : null}
-          <div className={styles['right-content']}>
-            {/* <div className={styles['hot-content']}>
-              <TitleImage
-                type='hot'
-                showLogo={false}
-                title={'ホット'}
-              />
-              <div className={`${styles['content-btn']} ${styles['hot-btn']}`}>
-                <div className={`${styles.btn} ${styles['day-btn']}`}></div>
-                <div className={`${styles.btn} ${styles['week-btn']}`}></div>
-                <div className={`${styles.btn} ${styles['month-btn']}`}></div>
-              </div>
-              <div className={`${styles['content-section']}`}>
-                {_titleContents_ ? (
-                  <ContentPageHot
-                    contents={_titleContents_}
-                    goToContent={goToContent}
-                  />
-                ) : null}
-              </div>
-            </div> */}
-            <div className={styles['trend-tags']}>
-              <TitleImage
-                type='trend'
-                showLogo={false}
-                title={'トレンド'}
-              />
-              <div className={styles['trend-tags-flex-site']}>
-                {tags ? <ContentPageTags tags={tags} goToContentsByTag={goToContentsByTag} /> : null}
-              </div>
-            </div>
-          </div>
+          { tags ? <ContentPageRight tags={tags}  /> : null }
         </div>
         <IndexDecorationImage imageType={'connect'} />
+
         <div className={styles['connect-flex-site']}>
           {_titleContents_ ? (
             <ContentPageConnect
               contents={_titleContents_}
-              goToContent={goToContent}
             />
           ) : null}
         </div>
