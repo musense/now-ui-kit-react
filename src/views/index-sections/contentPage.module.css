@@ -1,5 +1,5 @@
 .section {
-  padding: 20px 0;
+  padding: 0;
 }
 
 .content-page {
@@ -89,7 +89,8 @@
   justify-content: space-between;
   gap: 88px;
   background-color: unset;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
+  margin-bottom: 0;
   cursor: pointer;
 }
 
@@ -134,11 +135,6 @@
   font-size: var(--theme-font-2s);
   gap: 26px;
   margin-bottom: 65px;
-  cursor: pointer;
-}
-
-.content-tags:hover {
-  text-decoration: underline;
 }
 
 .learn-more {
@@ -249,7 +245,7 @@
 
 .content-section {
   position: relative;
-  margin: 34px 0 100px;
+  margin: 34px 0 0;
   padding-top: 0;
   display: flex;
   flex-direction: column;

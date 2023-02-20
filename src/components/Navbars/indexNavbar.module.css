@@ -3,6 +3,7 @@
   padding: 0;
   background-color: var(--theme-color);
   box-shadow: unset;
+  margin-bottom: 45px;
 }
 
 .container {

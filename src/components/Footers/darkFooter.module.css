@@ -8,6 +8,16 @@
   padding: 20px 0;
 }
 
+.custom-footer.index-margin{
+  margin-top: 127px;
+}
+.custom-footer.content-margin{
+  margin-top: 100px;
+}
+.custom-footer.tag-margin{
+  margin-top: 271px;
+}
+
 .custom-nav {
   width: 680px;
   height: 88px;
@@ -38,10 +48,10 @@
   line-height: 1;
   cursor: pointer;
 }
-.custom-li:hover {
+/* .custom-li:hover {
   outline: 1px solid;
   outline-color: hsl(0, 100%, 90);
-}
+} */
 
 .custom-li a {
   margin: 0;
