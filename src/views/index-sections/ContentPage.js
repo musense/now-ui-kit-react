@@ -39,6 +39,12 @@ function ContentPage() {
     setNextID(nextID)
   };
 
+  
+  function goToContent(contentID) {
+    if (contentID === null) return
+    navigate(`/content/${contentID}`)
+  }
+
   useEffect(() => {
     if (contents !== null) {
       findOneByIdAndReturnPrevNextID(contents, id);
@@ -61,7 +67,12 @@ function ContentPage() {
         </Container>
         <IndexDecorationImage imageType={'cut'} />
         <div className={styles['content-page']}>
-          {_theContent_ ? <ContentPageLeft content={_theContent_} /> : null}
+          {_theContent_ ? <ContentPageLeft 
+          content={_theContent_} 
+          prevID={prevID} 
+          nextID={nextID} 
+          goToContent={goToContent} 
+          /> : null}
           { tags ? <ContentPageRight tags={tags}  /> : null }
         </div>
         <IndexDecorationImage imageType={'connect'} />

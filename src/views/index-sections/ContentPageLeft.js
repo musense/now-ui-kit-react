@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./contentPage.module.css";
 import Tag from "./Tag";
 
@@ -19,7 +19,8 @@ const item = {
   altText: 'Content Image',
 };
 
-function ContentPageLeft({ content }) {
+function ContentPageLeft({ content, prevID, nextID, goToContent }) {
+
 
   return (<div className={styles['left-content']}>
     <div className={styles['main-content']}>
