@@ -13,6 +13,7 @@ export default function App() {
     useEffect(() => {
         navigate('/')
         // navigate('/content/63e31e0c1ab9109e2432270f')
+        // navigate('/content/tag/iPhone')
     }, []);
 
     return (
@@ -21,7 +22,7 @@ export default function App() {
                 <Route exact path="/" element={<Index />}>
                     <Route index element={<IndexView />} />
                     <Route path="content/:id" element={(<ContentPage />)} />
-                    <Route path="content/tag/:tag" element={(<TagContentsPage />)} />
+                    <Route path="content/tag/:tagName" element={(<TagContentsPage />)} />
                 </Route>
             </Routes>
         </>

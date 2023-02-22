@@ -68,18 +68,6 @@
   background-color: unset;
 }
 
-.title-container {
-  display: flex;
-  width: 794px;
-  flex-direction: row;
-  cursor: pointer;
-  /* background-color: whitesmoke; */
-  background-color: unset;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 .title-wrapper {
   display: flex;
   flex-direction: column;

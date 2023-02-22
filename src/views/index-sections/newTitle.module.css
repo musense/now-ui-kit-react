@@ -179,6 +179,19 @@
   background-color: unset;
   cursor: pointer;
 }
+
+.connect-container {
+  display: flex;
+  width: 794px;
+  flex-direction: row;
+  cursor: pointer;
+  /* background-color: whitesmoke; */
+  background-color: unset;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 /* @media screen and (min-width: 1200px) {
   .content-container {
   }
