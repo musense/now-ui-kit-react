@@ -11,6 +11,7 @@ import { useOutletContext } from 'react-router-dom';
 import ContentPageLeft from './ContentPageLeft';
 import ContentPageConnect from './ContentPageConnect';
 import ContentPageRight from './ContentPageRight';
+import { getTitleContents } from "./../../assets/js/titleContents";
 
 const item0 = {
   src: require('assets/img/bg1.jpg'),
@@ -49,6 +50,10 @@ function ContentPage() {
     if (contents !== null) {
       findOneByIdAndReturnPrevNextID(contents, id);
     } else {
+      getTitleContents()
+        .then((titleContents) => {
+          findOneByIdAndReturnPrevNextID(titleContents, id);
+        })
       navigate('/');
     }
   }, [id]);
