@@ -20,7 +20,9 @@ function HotContent({ index, content }) {
     return (
         <NavigateContainer
             index={index}
-            contentID={content._id}>
+            contentID={content._id}
+            customClassName={'hot-container'}
+            >
             <div className={styles['title-mainImage']} />
 
             <div className={styles['title-wrapper']}>

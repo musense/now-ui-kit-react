@@ -84,11 +84,11 @@ function IndexNavbar() {
               <span className="navbar-toggler-bar bottom-bar"></span>
             </button>
           </div> */}
-          <Collapse
+          {/* <Collapse
             className="justify-content-end"
             isOpen={collapseOpen}
             navbar
-          >
+          > */}
             <Nav navbar className={styles['nav-btn-wrapper']}>
               <NavItem>
                 <Button
@@ -139,7 +139,7 @@ function IndexNavbar() {
                 </UncontrolledTooltip>
               </NavItem>
             </Nav>
-          </Collapse>
+          {/* </Collapse> */}
         </Container>
       </Navbar>
     </>

@@ -4,6 +4,7 @@
   background-color: var(--theme-color);
   box-shadow: unset;
   margin-bottom: 45px;
+
 }
 
 .container {
@@ -11,11 +12,6 @@
   padding: 0;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1920px;
-  }
-}
 
 .navbar-logo {
   height: 98px;
@@ -29,11 +25,15 @@
 }
 
 .nav-btn-wrapper {
+  display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   gap: 1em;
   margin-right: 45px;
 }
-
+.nav-btn-wrapper * p {
+  display: none;
+}
 .nav-btn {
   color: var(--theme-color);
   height: 28px;
@@ -54,4 +54,21 @@
   background-image: url('./../../assets/img/ig_icon.png');
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav-btn-wrapper { 
+    margin-right: 25px;
+  }
 }
