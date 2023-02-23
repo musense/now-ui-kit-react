@@ -66,9 +66,11 @@
   display: inline-block;
 }
 
-.title-wrapper.hot .title-image {
+.title-wrapper.hot .title-image,
+.title-wrapper.trend .title-image {
   width: calc(433px * 0.8);
 }
+
 .title-wrapper.hot .title-image::after {
   transform: scaleX(0.8);
   transform-origin: left;
