@@ -20,10 +20,11 @@ function ConnectContent({ index, content, item1 }) {
 
     return (
         <NavigateContainer
+            key={index}
             index={index}
             contentID={content._id}
             customClassName={"connect-container"}
-            >
+        >
             <div className={styles['title-mainImage']}>
                 <div className='title-main-date'>
                     <span className={styles['create-date']}>

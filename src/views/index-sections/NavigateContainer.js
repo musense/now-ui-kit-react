@@ -1,9 +1,8 @@
-import React, { useId } from "react";
+import React from "react";
 import styles from './newTitle.module.css'
 import { useNavigate } from "react-router-dom";
 
-function NavigateContainer({ contentID ,children , customClassName="title-container"}) {
-    const id = useId()
+function NavigateContainer({ contentID, children, index, customClassName = "title-container" }) {
     const navigate = useNavigate()
     function goToContent(contentID) {
         if (contentID === null) return
@@ -11,7 +10,7 @@ function NavigateContainer({ contentID ,children , customClassName="title-contai
     }
     return (<div
         className={styles[customClassName]}
-        key={id}
+        key={index}
         onClick={() => goToContent(contentID)}
     >
         {children}

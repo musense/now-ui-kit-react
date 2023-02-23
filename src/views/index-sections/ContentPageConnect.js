@@ -9,6 +9,7 @@ function ContentPageConnect({ contents, }) {
 
         return (
             <NavigateContainer
+                key={index}
                 index={index}
                 contentID={content._id}
                 customClassName={"connect-flex-box"}>

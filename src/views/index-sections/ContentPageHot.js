@@ -8,6 +8,7 @@ function ContentPageHot({ contents }) {
 
         return (
             <NavigateContainer
+                key={index}
                 index={index}
                 contentID={content._id}>
                 <div className={styles['title-mainImage']} />

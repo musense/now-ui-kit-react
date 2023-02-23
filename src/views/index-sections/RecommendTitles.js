@@ -25,6 +25,7 @@ function RecommendTitles({ contents }) {
                             if (index >= 10) return
                             return (
                                 <NavigateContainer
+                                    key={index}
                                     index={index}
                                     contentID={recommend._id}
                                     customClassName={"flex-box"}>

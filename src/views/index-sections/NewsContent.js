@@ -5,6 +5,7 @@ import NavigateContainer from "./NavigateContainer";
 function NewsContent({ index, content }) {
     return (
         <NavigateContainer
+            key={index}
             index={index}
             contentID={content._id}>
             <div className={styles['title-mainImage']} />

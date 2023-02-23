@@ -55,7 +55,10 @@ function NewTitles({ contents }) {
                 newContents.map((content, index) => {
                   if (index >= 4) return
                   return (
-                    <NewsContent index={index} content={content} />
+                    <NewsContent
+                      key={index}
+                      index={index}
+                      content={content} />
                   )
                 })
               }
@@ -70,7 +73,10 @@ function NewTitles({ contents }) {
                   if (index >= 5) return
 
                   return (
-                    <HotContent index={index} content={content} />
+                    <HotContent
+                      key={index}
+                      index={index}
+                      content={content} />
                   )
                 })
               }
