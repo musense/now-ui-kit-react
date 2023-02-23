@@ -38,7 +38,7 @@ function ContentPageLeft({ content, prevID, nextID, goToContent }) {
         dangerouslySetInnerHTML={{ __html: content.content }}
       />
 
-      <div className='title-main-date'>
+      <div className={styles['title-main-date']}>
         <span className={styles['create-date']}>
           {new Date(content.createdAt).toLocaleDateString(
             undefined,
