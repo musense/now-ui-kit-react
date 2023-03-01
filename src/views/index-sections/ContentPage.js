@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Row } from 'reactstrap';
 // core components
 
 import styles from './contentPage.module.css';
@@ -12,13 +11,17 @@ import ContentPageLeft from './ContentPageLeft';
 import ContentPageConnect from './ContentPageConnect';
 import ContentPageRight from './ContentPageRight';
 import { getTitleContents } from "./../../assets/js/titleContents";
+import useScrollToTop from "./../../components/hook/useScrollToTop";
+
 
 const item0 = {
-  src: require('assets/img/bg1.jpg'),
+  src: require('assets/img/bg1.png'),
   altText: 'Nature, United States',
 };
 
 function ContentPage() {
+  useScrollToTop();
+
   const { contents, tags } = useOutletContext();
   const [_titleContents_, setTitleContents] = useState(null);
   const [_theContent_, setTheContent] = useState(null);
@@ -40,7 +43,7 @@ function ContentPage() {
     setNextID(nextID)
   };
 
-  
+
   function goToContent(contentID) {
     if (contentID === null) return
     navigate(`/content/${contentID}`)
@@ -62,33 +65,29 @@ function ContentPage() {
   return (
     <>
       <div className={`section ${styles.section}`}>
-        <Container>
-          <Row className='justify-content-center'>
-            <img
-              src={item0.src}
-              alt={item0.altText}
-            />
-          </Row>
-        </Container>
-        <IndexDecorationImage imageType={'cut'} />
-        <div className={styles['content-page']}>
-          {_theContent_ ? <ContentPageLeft 
-          content={_theContent_} 
-          prevID={prevID} 
-          nextID={nextID} 
-          goToContent={goToContent} 
-          /> : null}
-          { tags ? <ContentPageRight tags={tags}  /> : null }
-        </div>
-        <IndexDecorationImage imageType={'connect'} />
+        <img
+          src={item0.src}
+          alt={item0.altText}
+        />
+      </div>
+      <IndexDecorationImage imageType={'cut'} />
+      <div className={styles['content-page']}>
+        {_theContent_ && <ContentPageLeft
+          content={_theContent_}
+          prevID={prevID}
+          nextID={nextID}
+          goToContent={goToContent}
+        />}
+        {tags && <ContentPageRight tags={tags} />}
+      </div>
+      <IndexDecorationImage imageType={'connect'} />
 
-        <div className={styles['connect-flex-site']}>
-          {_titleContents_ ? (
-            <ContentPageConnect
-              contents={_titleContents_}
-            />
-          ) : null}
-        </div>
+      <div className={styles['connect-flex-site']}>
+        {_titleContents_ && (
+          <ContentPageConnect
+            contents={_titleContents_}
+          />
+        )}
       </div>
     </>
   );

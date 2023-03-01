@@ -39,7 +39,7 @@ function ConnectContent({ index, content, item1 }) {
                         )}
                     </span>
                 </div>
-                <img src={item1.src} />
+                <img src={item1.src} alt={item1.altText}/>
             </div>
             <div className={styles['title-wrapper']}>
                 <div

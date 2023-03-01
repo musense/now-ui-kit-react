@@ -1,11 +1,9 @@
 /*eslint-disable*/
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Tag from "views/index-sections/Tag";
 
-// reactstrap components
 import styles from "./darkFooter.module.css";
-
 
 function DarkFooter({ tags }) {
 
@@ -14,22 +12,21 @@ function DarkFooter({ tags }) {
   const [secondRowTags, setSecondRowTags] = useState(null);
   const [thirdRowTags, setThirdRowTags] = useState(null);
 
-  const [marginClassName, setMarginClassName] = useState("");
-  const getMarginCSS = () => useMemo(() => {
-    if (location.pathname === "/") {
-      setMarginClassName("index-margin")
-    } else if (location.pathname.indexOf('/content/tag') !== -1) {
-      setMarginClassName("tag-margin")
-    } else {
-      setMarginClassName("content-margin")
-    }
-  }, [location.key])
+  let footerClassName;
+  if (location.pathname === "/") {
+    footerClassName = "index-margin"
+  } else if (location.pathname.indexOf('/content/tag') !== -1) {
+    footerClassName = "tag-margin"
+  } else {
+    footerClassName = "content-margin"
+  }
 
-  getMarginCSS()
 
   const setTagRows = (start = 0, end = arr.length, arr = []) => {
+
     if (arr === null) return
     if (arr.length === 0) return
+    if (start > arr.length) return
     return arr.slice(start, end)
   }
 
@@ -40,35 +37,30 @@ function DarkFooter({ tags }) {
   }, [tags]);
 
   return (
-    <footer id="footer" className={`footer ${styles['custom-footer']} ${styles[marginClassName]}`} >
-      {firstRowTags || secondRowTags || thirdRowTags
-        ? (
-          <nav className={styles['custom-nav']}>
-            <ul className={styles['custom-ul']}>
-              {firstRowTags.map((tag, index) => (
-                <li className={styles['custom-li']} key={index}>
-                  <Tag index={index} tagName={tag.name} />
-                </li>
-              ))}
-            </ul>
-            <ul className={styles['custom-ul']}>
-              {secondRowTags.map((tag, index) => (
-                <li className={styles['custom-li']} key={index}>
-                  <Tag index={index} tagName={tag.name} />
-                </li>
-              ))}
-            </ul>
-            <ul className={styles['custom-ul']}>
-              {thirdRowTags.map((tag, index) => (
-                <li className={styles['custom-li']} key={index}>
-                  <Tag index={index} tagName={tag.name} />
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )
-        : null
-      }
+    <footer id="footer" className={`footer ${styles['custom-footer']} ${styles[footerClassName]}`} >
+      <nav className={styles['custom-nav']}>
+        {firstRowTags && <ul className={styles['custom-ul']}>
+          {firstRowTags.map((tag, index) => (
+            <li className={styles['custom-li']} key={index}>
+              <Tag index={index} tagName={tag.name} />
+            </li>
+          ))}
+        </ul>}
+        {secondRowTags && <ul className={styles['custom-ul']}>
+          {secondRowTags.map((tag, index) => (
+            <li className={styles['custom-li']} key={index}>
+              <Tag index={index} tagName={tag.name} />
+            </li>
+          ))}
+        </ul>}
+        {thirdRowTags && <ul className={styles['custom-ul']}>
+          {thirdRowTags.map((tag, index) => (
+            <li className={styles['custom-li']} key={index}>
+              <Tag index={index} tagName={tag.name} />
+            </li>
+          ))}
+        </ul>}
+      </nav>
     </footer>
   );
 }

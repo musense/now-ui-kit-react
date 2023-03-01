@@ -10,13 +10,7 @@
   gap: 45px;
 }
 
-.trend-tags-flex-tags {
-  white-space: nowrap;
-  line-height: 1;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: var(--theme-color);
-}
+
 
 @media screen and (max-width: 1550px) {
   .trend-tags{

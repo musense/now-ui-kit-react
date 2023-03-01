@@ -1,3 +1,4 @@
+import useScrollToTop from "components/hook/useScrollToTop";
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 import Carousel from "./index-sections/Carousel";
@@ -7,27 +8,16 @@ import NewTitles from "./index-sections/NewTitles";
 import RecommendTitles from "./index-sections/RecommendTitles";
 
 function IndexView() {
-
+    useScrollToTop();
     const { contents, tags } = useOutletContext()
-    // console.group('IndexView');
-    // console.log(contents);
-    // console.groupEnd('IndexView');
 
     return (
         <>
             <Carousel />
             <IndexDecorationImage imageType={'cut'} />
-            {
-                contents
-                    ? <NewTitles contents={contents} />
-                    : null
-            }
+            {contents && <NewTitles contents={contents} />}
             <IndexDecorationImage imageType={'recommend'} />
-            {
-                contents
-                    ? <RecommendTitles contents={contents} />
-                    : null
-            }
+            {contents && <RecommendTitles contents={contents} />}
         </>
     );
 }

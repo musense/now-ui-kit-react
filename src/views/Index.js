@@ -14,7 +14,6 @@ function Index() {
 
   const mounted = useRef();
   const location = useLocation()
-  console.log("🚀 ~ file: Index.js:17 ~ Index ~ location", location)
   const [_titleContents_, setTitleContents] = useState(null);
   const [_tagContents_, setTagContents] = useState(null);
 
@@ -32,22 +31,17 @@ function Index() {
         .then(tags => {
           setTagContents(tags)
         })
-
     }
   }, [mounted]);
   return (
     <>
-
       <IndexNavbar />
-
       <Outlet context={{ contents: _titleContents_, tags: _tagContents_ }} />
-
       {
         location.pathname === "/"
           ? <DarkFooter tags={_tagContents_} />
           : <DarkFooter tags={[]} />
       }
-
     </>
   );
 }

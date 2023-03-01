@@ -8,13 +8,13 @@
   padding: 20px 0;
 }
 
-.custom-footer.index-margin{
+.custom-footer.index-margin {
   margin-top: 127px;
 }
-.custom-footer.content-margin{
+.custom-footer.content-margin {
   margin-top: 100px;
 }
-.custom-footer.tag-margin{
+.custom-footer.tag-margin {
   margin-top: 271px;
 }
 
@@ -24,7 +24,7 @@
   display: flex !important;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .custom-ul {
   display: flex;
@@ -61,13 +61,9 @@
 }
 
 @media screen and (max-width: 1550px) {
-  .custom-footer.index-margin{
-    margin-top: 100px;
-  }
-  .custom-footer.content-margin{
-    margin-top: 100px;
-  }
-  .custom-footer.tag-margin{
+  .custom-footer.index-margin,
+  .custom-footer.content-margin,
+  .custom-footer.tag-margin {
     margin-top: 100px;
   }
 }
@@ -75,27 +71,19 @@
   .custom-nav {
     width: 600px;
   }
-  .custom-footer.index-margin{
-    margin-top: 50px;
-  }
-  .custom-footer.content-margin{
-    margin-top: 50px;
-  }
-  .custom-footer.tag-margin{
+  .custom-footer.index-margin,
+  .custom-footer.content-margin,
+  .custom-footer.tag-margin {
     margin-top: 50px;
   }
 }
 @media screen and (max-width: 768px) {
   .custom-nav {
-    width: 450px;
+    width: 75vw;
   }
-  .custom-footer.index-margin{
-    margin-top: 50px;
-  }
-  .custom-footer.content-margin{
-    margin-top: 50px;
-  }
-  .custom-footer.tag-margin{
-    margin-top: 50px;
+  .custom-footer.index-margin,
+  .custom-footer.content-margin,
+  .custom-footer.tag-margin {
+    margin-top: 10vw;
   }
 }

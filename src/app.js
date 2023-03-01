@@ -15,7 +15,7 @@ export default function App() {
         // navigate('/content/63e31e0c1ab9109e2432270f')
         // navigate('/content/tag/iPhone')
     }, []);
-
+ 
     return (
         <>
             <Routes>
@@ -23,6 +23,7 @@ export default function App() {
                     <Route index element={<IndexView />} />
                     <Route path="content/:id" element={(<ContentPage />)} />
                     <Route path="content/tag/:tagName" element={(<TagContentsPage />)} />
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Route>
             </Routes>
         </>

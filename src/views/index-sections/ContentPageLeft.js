@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./contentPage.module.css";
 import Tag from "./Tag";
 
@@ -23,11 +23,11 @@ function ContentPageLeft({ content, prevID, nextID, goToContent }) {
 
 
   return (<div className={styles['left-content']}>
+    <div className={styles['title-view']}>
+      <div className={styles['main-title-decoration']}></div>
+      <h1 className={styles['main-title']}>{content.title}</h1>
+    </div>
     <div className={styles['main-content']}>
-      <div className={styles['title-view']}>
-        <div className={styles['main-title-decoration']}></div>
-        <h1 className={styles['main-title']}>{content.title}</h1>
-      </div>
       <img
         className={styles['title-main-image']}
         src={item.src}
@@ -52,28 +52,13 @@ function ContentPageLeft({ content, prevID, nextID, goToContent }) {
         </span>
       </div>
     </div>
-    <div className={styles['learn-more']}>
-      <span>Learn more about the game</span>
-      <div className={styles['learn-more-box']}>
-        <span className={styles['learn-more-link']}>
-          What are nba betting tips? 3 tips to make betting more
-          profitable.
-        </span>
-        <span className={styles['learn-more-link']}>
-          Guide to betting on basketball games : Free NBA betting
-          tips.
-        </span>
-        <span className={styles['learn-more-link']}>
-          Expert in NBA betting tips : 3 Pro-analysis make you bet
-          smarter.
-        </span>
-      </div>
-    </div>
+
     <div className={styles['content-tags']}>
       {content.tags.map((tagName, index) =>
         <Tag key={index} tagName={tagName} />
       )}
     </div>
+
     <div className={styles['content-btn']}>
       <div onClick={() => goToContent(prevID)} className={`${styles.btn} ${styles['prev-btn']}`}></div>
       <div onClick={() => goToContent(nextID)} className={`${styles.btn} ${styles['next-btn']}`}></div>

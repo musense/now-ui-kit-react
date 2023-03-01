@@ -13,9 +13,10 @@ import styles from './tagContentPage.module.css';
 import ContentPageRight from './ContentPageRight';
 
 import ConnectContent from './ConnectContent';
+import useScrollToTop from 'components/hook/useScrollToTop';
 
 const item0 = {
-  src: require('assets/img/bg1.jpg'),
+  src: require('assets/img/bg1.png'),
   altText: 'Nature, United States',
 };
 const item1 = {
@@ -24,9 +25,11 @@ const item1 = {
 };
 
 function TagContentsPage() {
+  useScrollToTop();
   const { tags } = useOutletContext();
 
   const [titleContents, setTitleContents] = useState(null);
+  console.log("🚀 ~ file: TagContentsPage.js:32 ~ TagContentsPage ~ titleContents:", titleContents)
 
 
   const { tagName } = useParams();
@@ -34,6 +37,7 @@ function TagContentsPage() {
   useEffect(() => {
     getTitleContentsByTag(tagName)
       .then((titleContents) => {
+        console.log("🚀 ~ file: TagContentsPage.js:40 ~ .then ~ titleContents:", titleContents)
         setTitleContents(titleContents);
       });
   }, [tagName]);
@@ -41,15 +45,13 @@ function TagContentsPage() {
 
 
   return (
-    <div className={`section ${styles.section}`}>
-      <Container>
-        <Row className='justify-content-center'>
-          <img
-            src={item0.src}
-            alt={item0.altText}
-          />
-        </Row>
-      </Container>
+    <>
+      <div className={`section ${styles.section}`} >
+        <img
+          src={item0.src}
+          alt={item0.altText}
+        />
+      </div>
       <IndexDecorationImage imageType={'cut'} />
       <div className={styles['content-page']}>
         <div className={styles['left-content']}>
@@ -57,18 +59,19 @@ function TagContentsPage() {
             className={`${styles['main-content']} ${styles['connect-connect']}`}
           >
             <h2>#&nbsp;&nbsp;{tagName}</h2>
-            {titleContents ? (
+            {titleContents.length > 0 ? (
               <div className={`${styles['content-section']}`}>
                 {titleContents.map((content, index) =>
-                  <ConnectContent index={index} content={content} item1={item1} />
+                  <ConnectContent key={index} index={index} content={content} item1={item1} />
                 )}
               </div>
-            ) : null}
+            ) : <div className={`${styles['content-section']} ${styles.empty}`}>Empty...</div>
+            }
           </div>
         </div>
-        {tags ? <ContentPageRight tags={tags} /> : null}
+        {tags && <ContentPageRight tags={tags} />}
       </div>
-    </div>
+    </>
   );
 }
 
