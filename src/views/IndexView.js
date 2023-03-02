@@ -8,7 +8,7 @@ import NewTitles from "./index-sections/NewTitles";
 import RecommendTitles from "./index-sections/RecommendTitles";
 
 function IndexView() {
-    useScrollToTop();
+    // useScrollToTop();
     const { contents, tags } = useOutletContext()
 
     return (

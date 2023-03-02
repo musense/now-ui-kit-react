@@ -8,8 +8,8 @@ import { getTagsContents } from "./../assets/js/tagContents";
 
 import { Outlet, useLocation } from "react-router-dom";
 import DarkFooter from "components/Footers/DarkFooter";
-
-
+import ScrollTopButton from "components/ScrollToTopButton/ScrollTopButton";
+// import FixedToTopBtn from "./index-sections/FixedToTopBtn";
 function Index() {
 
   const mounted = useRef();
@@ -17,8 +17,10 @@ function Index() {
   const [_titleContents_, setTitleContents] = useState(null);
   const [_tagContents_, setTagContents] = useState(null);
 
-  useEffect(() => {
+  // let displayBtn = false
 
+
+  useEffect(() => {
     if (!mounted.current) {
       mounted.current = true;
       getTitleContents()
@@ -31,10 +33,13 @@ function Index() {
         .then(tags => {
           setTagContents(tags)
         })
+    } else {
+
     }
-  }, [mounted]);
+  }, [mounted,]);
+
   return (
-    <>
+    <div id="topSection">
       <IndexNavbar />
       <Outlet context={{ contents: _titleContents_, tags: _tagContents_ }} />
       {
@@ -42,7 +47,8 @@ function Index() {
           ? <DarkFooter tags={_tagContents_} />
           : <DarkFooter tags={[]} />
       }
-    </>
+      <ScrollTopButton />
+    </div>
   );
 }
 

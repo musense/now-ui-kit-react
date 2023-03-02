@@ -4,8 +4,10 @@
   height: 128px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 20px 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10px;
+  align-items: center;
 }
 
 .custom-footer.index-margin {
@@ -20,7 +22,7 @@
 
 .custom-nav {
   width: 680px;
-  height: 88px;
+  height: 107px;
   display: flex !important;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -58,6 +60,13 @@
 }
 .custom-li div {
   margin: 0;
+}
+
+.copyright {
+  position: relative;
+  color: var(--theme-white);
+  font-size: var(--theme-font-4s);
+  height: 20px;
 }
 
 @media screen and (max-width: 1550px) {

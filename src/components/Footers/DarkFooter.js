@@ -37,7 +37,7 @@ function DarkFooter({ tags }) {
   }, [tags]);
 
   return (
-    <footer id="footer" className={`footer ${styles['custom-footer']} ${styles[footerClassName]}`} >
+    <footer id="footer" className={`${styles['custom-footer']} ${styles[footerClassName]}`} >
       <nav className={styles['custom-nav']}>
         {firstRowTags && <ul className={styles['custom-ul']}>
           {firstRowTags.map((tag, index) => (
@@ -61,6 +61,10 @@ function DarkFooter({ tags }) {
           ))}
         </ul>}
       </nav>
+
+      <div className={styles.copyright}>
+        Copyright © 2023 陌聲行銷有限公司 All Rights Reserved.
+      </div>
     </footer>
   );
 }

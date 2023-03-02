@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
-import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Row } from 'reactstrap';
-// core components
-
-// import styles from './contentPage.module.css';
+import { useParams } from 'react-router-dom';
 import IndexDecorationImage from './IndexDecorationImage';
-
 import { useOutletContext } from 'react-router-dom';
 import { getTitleContentsByTag } from 'assets/js/titleContents';
 import styles from './tagContentPage.module.css';
 import ContentPageRight from './ContentPageRight';
-
 import ConnectContent from './ConnectContent';
 import useScrollToTop from 'components/hook/useScrollToTop';
 
@@ -29,7 +22,6 @@ function TagContentsPage() {
   const { tags } = useOutletContext();
 
   const [titleContents, setTitleContents] = useState(null);
-  console.log("🚀 ~ file: TagContentsPage.js:32 ~ TagContentsPage ~ titleContents:", titleContents)
 
 
   const { tagName } = useParams();
@@ -55,11 +47,9 @@ function TagContentsPage() {
       <IndexDecorationImage imageType={'cut'} />
       <div className={styles['content-page']}>
         <div className={styles['left-content']}>
-          <div
-            className={`${styles['main-content']} ${styles['connect-connect']}`}
-          >
+          <div className={`${styles['main-content']} ${styles['connect-connect']}`}>
             <h2>#&nbsp;&nbsp;{tagName}</h2>
-            {titleContents.length > 0 ? (
+            {titleContents ? (
               <div className={`${styles['content-section']}`}>
                 {titleContents.map((content, index) =>
                   <ConnectContent key={index} index={index} content={content} item1={item1} />

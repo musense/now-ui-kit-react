@@ -7171,3 +7171,10 @@ td.rdtYear:hover {
     padding-right: 10px;
   }
 }
+.hide {
+  right: -999999vw;
+}
+
+.show {
+  right: 5vw;
+}
